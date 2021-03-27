@@ -33,22 +33,22 @@ public class Personagem {
     }
     
     public int getDanoDoInim(Personagem inimigo){
-        int dano=0;
+        float dano=0;
         float temp;
         if(sorte<=15)
             dano=0;
         else if((sorte>=16)&&(sorte<=70))
-            dano=inimigo.energia*(1/3);
+            dano=(float)poder*(1.0f/3.0f);
         else if((sorte>=71)&&(sorte<=95)) {
             //Ataque com sorte
-            temp=inimigo.energia*(1.0f/3.0f);
+            temp=(float)poder*(1.0f/3.0f);
             dano=(int)(temp+temp*0.2f);
         }
         else if((sorte>=97)&&(sorte<=100)) {
             //Ataque crítico
-            temp=inimigo.energia*(1.0f/3.0f);
+            temp=(float)poder*(1.0f/3.0f);
             dano=(int)temp*2;
         }
-        return dano;
+        return (int)dano;
     }
 }

@@ -49,12 +49,17 @@ public class Batalha {
                     strPrintDano="Crítico!!! - "+danoAtual+" "+"HP";
                 System.out.println(strPrintDano);
             }
+            
+            if(persAtual==0)
+                persAtual=1;
+            else if(persAtual==1)
+                persAtual=0;
         }
     }
     
     public void setDanoPers(int danoParam) {
         if(persAtual==0)
-            pers[1].energia=pers[0].energia-danoParam;
+            pers[1].energia=pers[1].energia-danoParam;
         else if(persAtual==1)
             pers[0].energia=pers[0].energia-danoParam;
     }
