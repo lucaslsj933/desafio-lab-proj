@@ -7,7 +7,7 @@ package com.lucaslsj933.desafio_lab_proj;
 
 
 
-/** Não está terminado: conserte os ataques
+/** Não está terminado: adicione defesa, e conserte o fato de que quando a batalha termina as estatísticas não aparecem
  * 
  * @author Lucas Non-Admin
  */

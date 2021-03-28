@@ -31,30 +31,40 @@ public class Batalha {
             pers[persAtual].calcSorte();
             System.out.println(pers[0].nome+" - HP: "+pers[0].energia+" Poder: "+pers[0].poder);
             System.out.println(pers[1].nome+" - HP: "+pers[1].energia+" Poder: "+pers[1].poder);
-            System.out.println("\nDigite o comando: (A para Atacar ou D para Defender): ");
-            comando=scanObj.next().charAt(0);
-            if((comando=='a')||(comando=='A')) {
-                if(persAtual==0)
-                    danoAtual=pers[0].getDanoDoInim(pers[1]);
-                else if(persAtual==1)
-                    danoAtual=pers[1].getDanoDoInim(pers[0]);
-                setDanoPers(danoAtual);
-                if(pers[persAtual].sorte<=15)
-                    strPrintDano="Errou - "+danoAtual+" "+"HP";
-                else if((pers[persAtual].sorte>=16)&&(pers[persAtual].sorte<=70))
-                    strPrintDano="Normal - "+danoAtual+" "+"HP";
-                else if((pers[persAtual].sorte>=71)&&(pers[persAtual].sorte<=95))
-                    strPrintDano="Sorte!!! - "+danoAtual+" "+"HP";
-                else if((pers[persAtual].sorte>=97)&&(pers[persAtual].sorte<=100))
-                    strPrintDano="Crítico!!! - "+danoAtual+" "+"HP";
-                System.out.println(strPrintDano);
+            if(persAtual==0) {
+                System.out.println("\nTurno de "+pers[persAtual].nome+"\n");
+                System.out.println("Digite o comando: (A para Atacar ou D para Defender): ");
+                comando=scanObj.next().charAt(0);
+                if((comando=='a')||(comando=='A')) {
+                    atacar(1);
+                }
             }
-            
+            else if(persAtual==1) {
+                System.out.println("\nTurno de "+pers[persAtual].nome+"\n");
+                atacar(0);
+            }
+            //Mudança de turno
             if(persAtual==0)
                 persAtual=1;
             else if(persAtual==1)
                 persAtual=0;
         }
+    }
+    
+    public void atacar(int persInimId){
+        int danoAtual;
+        String strPrintDano="";
+        danoAtual=pers[persAtual].getDanoDoInim(pers[persInimId]);
+        setDanoPers(danoAtual);
+        if(pers[persAtual].sorte<=15)
+            strPrintDano="Errou - "+danoAtual+" "+"HP";
+        else if((pers[persAtual].sorte>=16)&&(pers[persAtual].sorte<=70))
+            strPrintDano="Normal - "+danoAtual+" "+"HP";
+        else if((pers[persAtual].sorte>=71)&&(pers[persAtual].sorte<=95))
+            strPrintDano="Sorte!!! - "+danoAtual+" "+"HP";
+        else if((pers[persAtual].sorte>=97)&&(pers[persAtual].sorte<=100))
+            strPrintDano="Crítico!!! - "+danoAtual+" "+"HP";
+        System.out.println(strPrintDano);
     }
     
     public void setDanoPers(int danoParam) {
