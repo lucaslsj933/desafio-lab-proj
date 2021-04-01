@@ -40,3 +40,21 @@ nome2 atacou nome1
 <mensagem de dano>
 ...
 Jogo acabou, o vencedor foi nome1 com HP restante de Y
+
+
+---INSTALAÇÃO---
+
+1-Se não instalou Java, instale-o.
+
+2-Extraia os arquivos
+
+3-Mova o mouse para algum lugar vazio dentro do explorador de arquivos. Então segure Shift e clique com o botão direito do mouse.
+
+4-Logo depois clique com o botão esquerdo do mouse em:
+
+-Windows 10: "Abrir a janela do Powershell aqui".
+-Windows 7: "Abrir a janela de comando aqui".
+
+5-Copie a linha abaixo,cole e aperte enter:
+
+java -jar desafio_lab_proj.jar
