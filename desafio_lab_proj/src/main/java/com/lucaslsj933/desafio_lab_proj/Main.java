@@ -13,8 +13,8 @@ package com.lucaslsj933.desafio_lab_proj;
  */
 public class Main {
     public static void main(String[] args) {
-        Personagem jogador=new Personagem("Jogador",200,150,100);
-        Personagem soldado1=new Personagem("Soldado",100,100,100);
+        Personagem jogador=new Personagem("Jogador",500,150,100);
+        Personagem soldado1=new Personagem("Soldado",400,100,100);
         Batalha.batalhaInit("Floresta",jogador,soldado1);
         Batalha.batalhaMain();
     }

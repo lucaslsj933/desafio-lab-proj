@@ -32,30 +32,25 @@ public class Personagem {
         sorte=(int)(Math.random() * (sorteMax+1));
     }
     
-    public int getDanoDoInim(Personagem inimigo){
-        float dano=0;
+    public void atacar(int persInimId){
+        int dano=0;
         float temp;
         if(sorte<=15)
+            //Ataque falhou
             dano=0;
         else if((sorte>=16)&&(sorte<=70))
-            dano=poder*(1.0f/3.0f);
+            //Ataque normal
+            dano=(int)(poder*0.3f);
         else if((sorte>=71)&&(sorte<=95)) {
             //Ataque com sorte
-            temp=poder*(1.0f/3.0f);
+            temp=poder*0.3f;
             dano=(int)(temp+temp*0.2f);
         }
         else if((sorte>=97)&&(sorte<=100)) {
             //Ataque crítico
-            temp=poder*(1.0f/3.0f);
+            temp=poder*0.3f;
             dano=(int)temp*2;
         }
-        return (int)dano;
-    }
-    
-    public void atacar(int persInimId){
-        int dano;
-        String strPrintDano="";
-        dano=getDanoDoInim(Batalha.pers[persInimId]);
         Batalha.pers[persInimId].energia=Batalha.pers[persInimId].energia-dano;
         printDanoDoInim(dano);
     }
@@ -63,12 +58,16 @@ public class Personagem {
     public void printDanoDoInim(int danoParam) {
         String strPrintDano="";
         if(sorte<=15)
+            //Ataque falhou
             strPrintDano="Errou - "+danoParam+" "+"HP";
         else if((sorte>=16)&&(sorte<=70))
+            //Ataque normal
             strPrintDano="Normal - "+danoParam+" "+"HP";
         else if((sorte>=71)&&(sorte<=95))
+            //Ataque com sorte
             strPrintDano="Sorte!!! - "+danoParam+" "+"HP";
         else if((sorte>=97)&&(sorte<=100))
+            //Ataque crítico
             strPrintDano="Crítico!!! - "+danoParam+" "+"HP";
         System.out.println(strPrintDano);
     }
