@@ -42,7 +42,7 @@ nome2 atacou nome1
 Jogo acabou, o vencedor foi nome1 com HP restante de Y
 
 
----INSTALAÇÃO---
+----------------INSTALAÇÃO----------------
 
 1-Se não instalou Java, instale-o.
 
