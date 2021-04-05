@@ -52,8 +52,8 @@ Jogo acabou, o vencedor foi nome1 com HP restante de Y
 
 4-Logo depois clique com o botão esquerdo do mouse em:
 
---Windows 10: "Abrir a janela do Powershell aqui".
---Windows 7: "Abrir a janela de comando aqui".
+A: Windows 10: "Abrir a janela do Powershell aqui".
+B: Windows 7: "Abrir a janela de comando aqui".
 
 5-Copie a linha abaixo,cole e aperte enter:
 
